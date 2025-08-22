@@ -1,0 +1,195 @@
+/* --- Basic Setup & Fonts --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Main Layout --- */
+#game-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#board-container {
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+
+/* --- Game Board (CSS Grid) --- */
+#board {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(9, 1fr) 1.5fr;
+    grid-template-rows: 1.5fr repeat(9, 1fr) 1.5fr;
+    width: 100%;
+    height: 100%;
+    background-color: #16213e;
+    border: 5px solid #0f3460;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.tile {
+    border: 1px solid #0f3460;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    font-size: 10px;
+    position: relative;
+    background-color: #e94560;
+    color: #16213e;
+}
+.tile-name {
+    font-weight: bold;
+}
+.corner {
+    font-size: 14px;
+}
+
+#center-info {
+    grid-column: 2 / 12;
+    grid-row: 2 / 12;
+    background-color: #16213e;
+    border: 2px solid #0f3460;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#log {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    font-size: 12px;
+    margin-top: 10px;
+    background: #1a1a2e;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* --- Player Pieces --- */
+.player-piece {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgba(0,0,0,0.7);
+    z-index: 10;
+}
+#player1-piece { background-color: #ff5733; }
+#player2-piece { background-color: #33aaff; }
+
+/* --- Controls & Info Panel --- */
+#controls-panel {
+    width: 300px;
+    background-color: #16213e;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 3px solid #0f3460;
+}
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #e94560;
+    margin-bottom: 20px;
+}
+.player-info {
+    background: #1a1a2e;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid #533483;
+    transition: all 0.3s ease;
+}
+.player-info.active-player {
+    border-color: #e94560;
+    transform: scale(1.05);
+}
+.dice-area {
+    text-align: center;
+    margin-top: 20px;
+}
+#turn-indicator {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#roll-dice-btn {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#roll-dice-btn:hover {
+    background-color: #c73b51;
+}
+#dice-display {
+    font-size: 2rem;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+/* --- Modal --- */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+#modal.hidden {
+    display: none;
+}
+#modal-content {
+    background: #16213e;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border: 3px solid #0f3460;
+}
+#modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+#modal-buttons button {
+    background-color: #533483;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#modal-buttons .buy-btn {
+    background-color: #1f9e62;
+}

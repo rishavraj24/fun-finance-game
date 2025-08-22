@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Finance Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Main Game Board -->
+        <div id="board-container">
+            <div id="board">
+                <!-- Center area for game log -->
+                <div id="center-info">
+                    <h2>Game Log</h2>
+                    <div id="log"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Player Info & Controls Panel -->
+        <div id="controls-panel">
+            <h1 class="title">Fun Finance</h1>
+            
+            <div id="player1-info" class="player-info active-player">
+                <h2>Player 1</h2>
+                <p>Money: $<span id="player1-money">1500</span></p>
+            </div>
+
+            <div id="player2-info" class="player-info">
+                <h2>Player 2</h2>
+                <p>Money: $<span id="player2-money">1500</span></p>
+            </div>
+
+            <div class="dice-area">
+                <p id="turn-indicator">Player 1's Turn</p>
+                <div id="dice-display"></div>
+                <button id="roll-dice-btn">Roll Dice</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Decisions (e.g., Buy Property) -->
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <h3 id="modal-title">Modal Title</h3>
+            <p id="modal-text">Some text here...</p>
+            <div id="modal-buttons">
+                <!-- Buttons will be added here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
